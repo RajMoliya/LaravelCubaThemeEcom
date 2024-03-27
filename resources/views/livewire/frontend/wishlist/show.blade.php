@@ -1,73 +1,67 @@
-<div>
-    <div class="py-3 py-md-5 bg-light">
-        <div class="container">
-            <h4>My Wishlist</h4>
-            <hr>
+<div class="page-wrapper compact-wrapper" id="pageWrapper" style="margin: 20px">
+    <div class="page-body">
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
             <div class="row">
-                @if (session()->has('message'))
-                    <div class="alert alert-success">
-                        {{ session('message') }}
-                    </div>
-                @endif
-                <div class="col-md-12">
-                    <div class="shopping-cart">
-
-                        <div class="cart-header d-none d-sm-none d-mb-block d-lg-block">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4>Products</h4>
-                                </div>
-                                <div class="col-md-2">
-                                    <h4>Price</h4>
-                                </div>
-                                <div class="col-md-4">
-                                    <h4>Remove</h4>
-                                </div>
-                            </div>
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Wishlist
+                                <span class="float-end" style="font-size:90%">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url('/') }}"> <i
+                                                    data-feather="home" style="padding-bottom: 3px"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Wishlist</li>
+                                    </ol>
+                                </span>
+                            </h5>
                         </div>
-                        @forelse ($wishlist as $wishlistItem)
-                            @if ($wishlistItem->product)
-                                <div class="cart-item">
-                                    <div class="row">
-                                        <div class="col-md-6 my-auto">
-                                            <a
-                                                href="{{ url('collections/' . $wishlistItem->product->category->slug . '/' . $wishlistItem->product->slug) }}">
-                                                <label class="product-name">
-                                                    <img src="{{ $wishlistItem->product->productImages[0]->image }}"
-                                                        style="width: 50px; height: 50px"
-                                                        alt=" {{ $wishlistItem->product->name }}">
-                                                    {{ $wishlistItem->product->name }}
-                                                </label>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-2 my-auto">
-                                            <label class="price"> &#8377;{{ $wishlistItem->product->selling_price }}
-                                            </label>
-                                        </div>
-                                        <div class="col-md-4 col-12 my-auto">
-                                            <div class="remove">
-                                                <button type="button"
-                                                    wire:click ="removeWishlistItem({{ $wishlistItem->id }})"
-                                                    class="btn btn-danger btn-sm">
-                                                    <span wire:loading.remove
-                                                        wire:target = "removeWishlistItem({{ $wishlistItem->id }})">
-                                                        <i class="fa fa-trash"></i> Remove
-                                                    </span>
-                                                    <span wire:loading
-                                                        wire:target = "removeWishlistItem({{ $wishlistItem->id }})"><i
-                                                            class="fa fa-trash"></i> Removing...</span>
-                                                </button>
+                        <div class="card-body">
+                            <div class="row">
+                                @forelse ($wishlist as $wishlistItem)
+                                    @if ($wishlistItem->product)
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="prooduct-details-box">
+                                                <div class="media"><img class="align-self-center img-fluid img-60"
+                                                        src="{{ asset($wishlistItem->product->productImages[0]->image) }}"
+                                                        alt="">
+                                                    <div class="media-body ms-3">
+                                                        <div class="product-name">
+                                                            <h6><a
+                                                                    href="{{ url('collections/' . $wishlistItem->product->category->slug . '/' . $wishlistItem->product->slug) }}">{{ $wishlistItem->product->name }}</a>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="rating"><i class="fa fa-star"></i><i
+                                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                                class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                                                        <div class="price d-flex">
+                                                            <div class="text-muted me-2">Price</div>:
+                                                            &#8377;{{ $wishlistItem->product->selling_price }}
+                                                        </div>
+                                                        <div class="avaiabilty">
+                                                            @if ($wishlistItem->product->quantity > 0)
+                                                                <div class="text-success">In stock</div>
+                                                            @else
+                                                                <div class="text-danger">OutOf stock</div>
+                                                            @endif
+
+                                                        </div><a class="btn btn-primary btn-xs" href="#">Move to
+                                                            Cart</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @empty
-                            <h4>No Products in Wishlist</h4>
-                        @endforelse
+                                    @endif
+                                @empty
+                                    <h4>No Products in Wishlist</h4>
+                                @endforelse
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Container-fluid Ends-->
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 class CheckoutShow extends Component
 {
 
-    public $carts ,$totalProductAmount = 0;
+    public $carts ,$totalProductAmount = 0,$selectedMode;
 
     public $fullname,$email,$phone,$address, $pincode,$payment_mode = NULL,$payment_id = NULL;
 
@@ -67,8 +67,8 @@ class CheckoutShow extends Component
 
 
     }
-    public function codOrder(){
-        $this->payment_mode = "Cash on Delivery";
+    public function codOrder($paymentMode){
+        $this->payment_mode = $paymentMode;
         $codOrder = $this->placeOrder();
         if($codOrder){
 
@@ -119,8 +119,10 @@ class CheckoutShow extends Component
         $this->pincode = auth()->user()->userDetail->pin_code;
         $this->address = auth()->user()->userDetail->address;
         $this->totalProductAmount = $this->totalProductAmount();
+        $this->carts = Cart::where('user_id',auth()->user()->id)->get();
         return view('livewire.frontend.checkout.checkout-show',[
             'totalProductAmount'=> $this->totalProductAmount,
+            'carts' => $this->carts,
         ]);
     }
 }

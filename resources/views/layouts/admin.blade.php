@@ -123,7 +123,7 @@
     <script src="{{ asset('/asset/js/chart/apex-chart/stock-prices.js') }}"></script>
     <script src="{{ asset('/asset/js/notify/bootstrap-notify.min.js') }}"></script>
     <script src="{{ asset('/asset/js/dashboard/default.js') }}"></script>
-    <script src="{{ asset('/asset/js/notify/index.js') }}"></script>
+    {{-- <script src="{{ asset('/asset/js/notify/index.js') }}"></script> --}}
     <script src="{{ asset('/asset/js/datepicker/date-picker/datepicker.js') }}"></script>
     <script src="{{ asset('/asset/js/datepicker/date-picker/datepicker.en.js') }}"></script>
     <script src="{{ asset('/asset/js/datepicker/date-picker/datepicker.custom.js') }}"></script>
@@ -135,7 +135,7 @@
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="{{ asset('/asset/js/script.js') }}"></script>
-    <script src="{{ asset('/asset/js/theme-customizer/customizer.js') }}"></script>
+    {{-- <script src="{{ asset('/asset/js/theme-customizer/customizer.js') }}"></script> --}}
 
     @yield('script')
     @livewireScripts
