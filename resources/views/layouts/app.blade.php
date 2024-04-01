@@ -131,6 +131,16 @@
     <script src="{{ asset('/asset/js/chart/apex-chart/apex-chart.js') }}"></script>
     <script src="{{ asset('/asset/js/chart/apex-chart/stock-prices.js') }}"></script>
     <script src="{{ asset('/asset/js/notify/bootstrap-notify.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/range-slider/rangeslider-script.js') }}"></script>
+    <script src="{{ asset('/assets/js/touchspin/vendors.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/touchspin/touchspin.js') }}"></script>
+    <script src="{{ asset('/assets/js/touchspin/input-groups.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/owlcarousel/owl.carousel.js') }}"></script>
+    <script src="{{ asset('/assets/js/select2/select2.full.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/select2/select2-custom.js') }}"></script>
+    <script src="{{ asset('/assets/js/tooltip-init.js') }}"></script>
+    <script src="{{ asset('/assets/js/product-tab.js') }}"></script>
     <script src="{{ asset('/asset/js/dashboard/default.js') }}"></script>
     {{-- <script src="{{ asset('/asset/js/notify/index.js') }}"></script> --}}
     <script src="{{ asset('/asset/js/datepicker/date-picker/datepicker.js') }}"></script>
