@@ -285,8 +285,8 @@
                                     <div class="product-box">
                                         <div class="product-img">
                                             <div class="ribbon ribbon-success ribbon-right">New</div><img
-                                                class="img-fluid" src="{{ asset($productItem->productImages[0]->image) }}"
-                                                alt="">
+                                                style="width: 100%;height:350px"
+                                                src="{{ asset($productItem->productImages[0]->image) }}" alt="">
                                             <div class="product-hover">
                                                 <ul>
                                                     <li>
@@ -295,7 +295,7 @@
                                                     </li>
                                                     <li>
                                                         <button class="btn" type="button" data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalCenter3"><i
+                                                            data-bs-target="#exampleModalCenter{{ $productItem->id }}"><i
                                                                 class="icon-eye"></i></button>
                                                     </li>
                                                     <li>
@@ -305,14 +305,15 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
-                                            aria-labelledby="exampleModalCenter3" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModalCenter{{ $productItem->id }}"
+                                            tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter3"
+                                            aria-hidden="true">
                                             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <div class="product-box row">
                                                             <div class="product-img col-lg-6"><img class="img-fluid"
-                                                                    src="../assets/images/ecommerce/04.jpg"
+                                                                    src="{{ asset($productItem->productImages[0]->image) }}"
                                                                     alt="">
                                                             </div>
                                                             <div class="product-details col-lg-6 text-start">
@@ -357,9 +358,9 @@
                                                                         <button class="btn btn-primary" type="button">Add
                                                                             to
                                                                             Cart</button>
-                                                                        <button class="btn btn-primary"
-                                                                            type="button">View
-                                                                            Details</button>
+                                                                        <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}"
+                                                                            class="btn btn-primary" type="button">View
+                                                                            Details</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -374,10 +375,10 @@
                                             <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                     class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                     class="fa fa-star"></i></div>
-                                            <h4>Man's Suit</h4>
+                                            <h4>{{ $productItem->findBrand->name }}</h4>
                                             <p>Simply dummy text of the printing.</p>
-                                            <div class="product-price">200$
-                                                <del>$350.00 </del>
+                                            <div class="product-price">&#x20B9;{{ $productItem->selling_price }}
+                                                <del>&#x20B9;{{ $productItem->original_price }} </del>
                                             </div>
                                         </div>
                                     </div>

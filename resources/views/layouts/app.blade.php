@@ -27,9 +27,9 @@
     <link href='/asset/css/bootstrap.min.css' rel="stylesheet">
     <link href='/asset/css/customslider.css' rel="stylesheet">
 
-    {{-- Owl Carousel --}}
+    {{-- Owl Carousel
     <link rel="stylesheet" href="/asset/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/asset/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/asset/css/owl.theme.default.min.css"> --}}
 
     <style>
         a {
@@ -70,6 +70,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/asset/css/vendors/scrollbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/asset/css/vendors/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/asset/css/vendors/chartist.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/owlcarousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/rating.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/asset/css/vendors/date-picker.css') }}">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
@@ -134,6 +136,10 @@
     <script src="{{ asset('/assets/js/range-slider/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('/assets/js/range-slider/rangeslider-script.js') }}"></script>
     <script src="{{ asset('/assets/js/touchspin/vendors.min.js') }}"></script>
+    <script src="{{ asset('/assets/js/rating/jquery.barrating.js') }}"></script>
+    <script src="{{ asset('/assets/js/rating/rating-script.js') }}"></script>
+    <script src="{{ asset('/assets/js/ecommerce.js') }}"></script>
+    <script src="{{ asset('/assets/js/tooltip-init.js') }}"></script>
     <script src="{{ asset('/assets/js/touchspin/touchspin.js') }}"></script>
     <script src="{{ asset('/assets/js/touchspin/input-groups.min.js') }}"></script>
     <script src="{{ asset('/assets/js/owlcarousel/owl.carousel.js') }}"></script>
